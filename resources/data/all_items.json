@@ -1,0 +1,14 @@
+{
+    "chair_1": {
+        "price": 10
+    },
+    "couch_1": {
+        "price": 10
+    },
+    "shelf_1": {
+        "price": 10
+    },
+    "nightstand_1": {
+        "price": 10
+    }
+}

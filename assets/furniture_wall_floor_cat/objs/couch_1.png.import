@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Dining Chair.png-34c41e568ad89d2662cc5a6dd86b55d6.stex"
+path="res://.import/couch_1.png-6635f17b482ab592bc200d3a4d4be82c.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/furniture_wall_floor_cat/objs/Dining Chair.png"
-dest_files=[ "res://.import/Dining Chair.png-34c41e568ad89d2662cc5a6dd86b55d6.stex" ]
+source_file="res://assets/furniture_wall_floor_cat/objs/couch_1.png"
+dest_files=[ "res://.import/couch_1.png-6635f17b482ab592bc200d3a4d4be82c.stex" ]
 
 [params]
 

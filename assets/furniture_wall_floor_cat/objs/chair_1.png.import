@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Nightstand.png-0ca674514c0d5eb6b0c48cd3cc23dc69.stex"
+path="res://.import/chair_1.png-186e832af49fe5de7f5a414af7cdd679.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/furniture_wall_floor_cat/objs/Nightstand.png"
-dest_files=[ "res://.import/Nightstand.png-0ca674514c0d5eb6b0c48cd3cc23dc69.stex" ]
+source_file="res://assets/furniture_wall_floor_cat/objs/chair_1.png"
+dest_files=[ "res://.import/chair_1.png-186e832af49fe5de7f5a414af7cdd679.stex" ]
 
 [params]
 

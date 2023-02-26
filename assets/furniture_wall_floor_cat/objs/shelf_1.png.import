@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Couch.png-da4cc306c3912609e35b2e6c664f697f.stex"
+path="res://.import/shelf_1.png-1d188f282edaab5abddad3a887b0a3f4.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/furniture_wall_floor_cat/objs/Couch.png"
-dest_files=[ "res://.import/Couch.png-da4cc306c3912609e35b2e6c664f697f.stex" ]
+source_file="res://assets/furniture_wall_floor_cat/objs/shelf_1.png"
+dest_files=[ "res://.import/shelf_1.png-1d188f282edaab5abddad3a887b0a3f4.stex" ]
 
 [params]
 

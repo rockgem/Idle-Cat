@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Empty Shelves.png-2e02c306d8cb33fad0bcf26a1d3327d7.stex"
+path="res://.import/nightstand_1.png-2a6536c062d5fb1b4957967b73c80e2a.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/furniture_wall_floor_cat/objs/Empty Shelves.png"
-dest_files=[ "res://.import/Empty Shelves.png-2e02c306d8cb33fad0bcf26a1d3327d7.stex" ]
+source_file="res://assets/furniture_wall_floor_cat/objs/nightstand_1.png"
+dest_files=[ "res://.import/nightstand_1.png-2a6536c062d5fb1b4957967b73c80e2a.stex" ]
 
 [params]
 
