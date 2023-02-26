@@ -1,6 +1,63 @@
-[gd_scene format=2]
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://scenes/UI.gd" type="Script" id=1]
 
 [node name="UI" type="Control"]
 anchor_right = 1.0
 anchor_bottom = 1.0
 mouse_filter = 2
+script = ExtResource( 1 )
+
+[node name="Layer1" type="Control" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+mouse_filter = 2
+
+[node name="Buy" type="Button" parent="Layer1"]
+unique_name_in_owner = true
+margin_left = 7.0
+margin_top = 7.0
+margin_right = 43.0
+margin_bottom = 27.0
+text = "Buy"
+
+[node name="PlacementControls" type="Control" parent="."]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+mouse_filter = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="PlacementControls"]
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 6.0
+margin_top = -25.0
+margin_right = -6.0
+margin_bottom = -5.0
+alignment = 1
+
+[node name="Left" type="Button" parent="PlacementControls/HBoxContainer"]
+margin_right = 82.0
+margin_bottom = 20.0
+size_flags_horizontal = 3
+text = "Flip"
+
+[node name="Right" type="Button" parent="PlacementControls/HBoxContainer"]
+visible = false
+margin_left = 57.0
+margin_right = 110.0
+margin_bottom = 20.0
+size_flags_horizontal = 3
+text = "Right"
+
+[node name="Place" type="Button" parent="PlacementControls/HBoxContainer"]
+unique_name_in_owner = true
+margin_left = 86.0
+margin_right = 168.0
+margin_bottom = 20.0
+size_flags_horizontal = 3
+text = "Place"
+
+[connection signal="pressed" from="PlacementControls/HBoxContainer/Left" to="." method="_on_Left_pressed"]
+[connection signal="pressed" from="PlacementControls/HBoxContainer/Place" to="." method="_on_Place_pressed"]

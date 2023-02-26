@@ -2,6 +2,7 @@ extends Node
 
 
 signal item_bought(item_id)
+signal item_clicked(own)
 
 
 var all_items: Dictionary = {}
