@@ -4,10 +4,11 @@
 [ext_resource path="res://resources/tilemap/new_tileset.tres" type="TileSet" id=2]
 [ext_resource path="res://actors/Cat.tscn" type="PackedScene" id=3]
 [ext_resource path="res://actors/Object.tscn" type="PackedScene" id=4]
-[ext_resource path="res://assets/furniture_wall_floor_cat/objs/shelf_1.png" type="Texture" id=5]
 [ext_resource path="res://scenes/UI.tscn" type="PackedScene" id=6]
+[ext_resource path="res://scenes/World.gd" type="Script" id=7]
 
 [node name="World" type="Node2D"]
+script = ExtResource( 7 )
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
@@ -36,9 +37,11 @@ cell_y_sort = true
 format = 1
 tile_data = PoolIntArray( 393229, 5, 0, 393230, 5, 0, 393231, 5, 0, 393232, 5, 0, 393233, 5, 0, 458766, 5, 0, 458767, 5, 0, 458768, 5, 0, 458769, 5, 0, 458770, 5, 0, 524303, 5, 0, 524304, 5, 0, 524305, 5, 0, 524306, 5, 0, 524307, 5, 0 )
 
-[node name="Object" parent="YSort" instance=ExtResource( 4 )]
-position = Vector2( 16, 176 )
-texture = ExtResource( 5 )
-
 [node name="Cat" parent="YSort" instance=ExtResource( 3 )]
 position = Vector2( 96, 224 )
+
+[node name="Object" parent="YSort" instance=ExtResource( 4 )]
+position = Vector2( 64, 200 )
+
+[node name="ItemSpawn" type="Position2D" parent="."]
+position = Vector2( 80, 216 )
