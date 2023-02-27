@@ -26,3 +26,11 @@ func _on_Place_pressed():
 
 func _on_Left_pressed():
 	ref.flip_h = !ref.flip_h
+
+
+func _on_Buy_pressed():
+	get_node('%Shop').show()
+
+
+func _on_CloseShop_pressed():
+	get_node('%Shop').hide()
