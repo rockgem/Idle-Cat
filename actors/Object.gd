@@ -1,6 +1,7 @@
 extends Sprite
 
 
+# this is used to prevent clicking other objs while moving this object
 var is_selected: bool = false
 
 
