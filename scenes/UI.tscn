@@ -1,8 +1,9 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://scenes/UI.gd" type="Script" id=1]
 [ext_resource path="res://assets/store/pixel-box.jpeg" type="Texture" id=2]
 [ext_resource path="res://actors/ShopDisplay.tscn" type="PackedScene" id=3]
+[ext_resource path="res://resources/styles/panel_big_1.tres" type="StyleBox" id=4]
 
 [sub_resource type="StyleBoxEmpty" id=1]
 
@@ -86,6 +87,7 @@ margin_left = 11.0
 margin_top = 75.0
 margin_right = -11.0
 margin_bottom = -43.0
+custom_styles/panel = ExtResource( 4 )
 
 [node name="VBoxContainer" type="VBoxContainer" parent="Shop"]
 anchor_right = 1.0
