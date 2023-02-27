@@ -1,16 +1,14 @@
 [gd_scene load_steps=3 format=2]
 
 [ext_resource path="res://actors/ShopDisplay.gd" type="Script" id=1]
-
-[sub_resource type="StyleBoxFlat" id=1]
-bg_color = Color( 0.478431, 1, 0.635294, 1 )
+[ext_resource path="res://resources/styles/panel_small_green_1.tres" type="StyleBox" id=2]
 
 [node name="ShopDisplay" type="Panel"]
 margin_right = 32.0
 margin_bottom = 32.0
 rect_min_size = Vector2( 48, 64 )
 mouse_filter = 1
-custom_styles/panel = SubResource( 1 )
+custom_styles/panel = ExtResource( 2 )
 script = ExtResource( 1 )
 
 [node name="Icon" type="TextureRect" parent="."]

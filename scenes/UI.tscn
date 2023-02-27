@@ -1,9 +1,10 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://scenes/UI.gd" type="Script" id=1]
 [ext_resource path="res://assets/store/pixel-box.jpeg" type="Texture" id=2]
 [ext_resource path="res://actors/ShopDisplay.tscn" type="PackedScene" id=3]
 [ext_resource path="res://resources/styles/panel_big_1.tres" type="StyleBox" id=4]
+[ext_resource path="res://resources/styles/font12.tres" type="DynamicFont" id=5]
 
 [sub_resource type="StyleBoxEmpty" id=1]
 
@@ -100,27 +101,29 @@ custom_constants/separation = 16
 
 [node name="VBoxContainer" type="VBoxContainer" parent="Shop/VBoxContainer"]
 margin_right = 148.0
-margin_bottom = 82.0
+margin_bottom = 83.0
 
 [node name="Label" type="Label" parent="Shop/VBoxContainer/VBoxContainer"]
 margin_right = 148.0
-margin_bottom = 14.0
+margin_bottom = 15.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = ExtResource( 5 )
 text = "Purchase furniture"
 align = 1
 
 [node name="TextureRect" type="TextureRect" parent="Shop/VBoxContainer/VBoxContainer"]
-margin_top = 18.0
+margin_top = 19.0
 margin_right = 148.0
-margin_bottom = 82.0
+margin_bottom = 83.0
 rect_min_size = Vector2( 64, 64 )
 texture = ExtResource( 2 )
 expand = true
 stretch_mode = 6
 
 [node name="ScrollContainer" type="ScrollContainer" parent="Shop/VBoxContainer"]
-margin_top = 98.0
+margin_top = 99.0
 margin_right = 148.0
-margin_bottom = 214.0
+margin_bottom = 219.0
 size_flags_vertical = 3
 theme = SubResource( 6 )
 
@@ -190,7 +193,7 @@ margin_right = 100.0
 margin_bottom = 336.0
 
 [node name="CloseShop" type="Button" parent="Shop/VBoxContainer"]
-margin_top = 230.0
+margin_top = 235.0
 margin_right = 148.0
 margin_bottom = 250.0
 text = "Close"
