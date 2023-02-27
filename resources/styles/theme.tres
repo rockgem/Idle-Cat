@@ -1,6 +1,6 @@
 [gd_resource type="Theme" load_steps=3 format=2]
 
-[ext_resource path="res://resources/styles/button_1_normal.tres" type="StyleBox" id=1]
+[ext_resource path="res://resources/styles/button_green_normal.tres" type="StyleBox" id=1]
 [ext_resource path="res://resources/styles/font12.tres" type="DynamicFont" id=2]
 
 [resource]
@@ -9,3 +9,4 @@ Button/styles/focus = ExtResource( 1 )
 Button/styles/hover = ExtResource( 1 )
 Button/styles/normal = ExtResource( 1 )
 Button/styles/pressed = ExtResource( 1 )
+Label/fonts/font = ExtResource( 2 )

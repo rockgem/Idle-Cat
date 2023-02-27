@@ -9,7 +9,8 @@ var all_items: Dictionary = {}
 
 
 var player_data: Dictionary = {
-	'money': 100
+	'money': 100,
+	'inv_items': {}
 }
 
 var is_placing: bool = false
@@ -24,7 +25,5 @@ func _ready():
 func buy_item(item_id: String):
 	if all_items.has(item_id) == false:
 		return
-	
-	
 	
 	emit_signal("item_bought", item_id)

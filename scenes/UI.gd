@@ -34,3 +34,7 @@ func _on_Buy_pressed():
 
 func _on_CloseShop_pressed():
 	get_node('%Shop').hide()
+
+
+func _on_Storage_pressed():
+	pass # Replace with function body.
