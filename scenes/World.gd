@@ -2,6 +2,8 @@ extends Node2D
 
 
 
+
+
 func _ready():
 	ManagerGame.connect("item_bought", self, 'on_item_bought')
 

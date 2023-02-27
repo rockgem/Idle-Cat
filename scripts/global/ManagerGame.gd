@@ -12,7 +12,7 @@ var player_data: Dictionary = {
 	'money': 100
 }
 
-
+var is_placing: bool = false
 
 func _ready():
 	var f = File.new()
