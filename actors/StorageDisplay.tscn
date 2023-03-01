@@ -34,3 +34,5 @@ margin_right = 32.0
 margin_bottom = 33.0
 text = "x99"
 align = 2
+
+[connection signal="gui_input" from="." to="." method="_on_StorageDisplay_gui_input"]

@@ -3,6 +3,8 @@ extends Node
 
 signal item_bought(item_id)
 signal item_clicked(own)
+signal item_storage_clicked(item_id)
+
 
 
 const SAVE_PATH = 'user://player_data.json'

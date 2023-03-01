@@ -14,3 +14,9 @@ func _ready():
 		$Amount.show()
 	else:
 		$Amount.hide()
+
+
+func _on_StorageDisplay_gui_input(event):
+	if event is InputEventScreenTouch and !event.pressed:
+		data_inside['stack'] -= 1
+		ManagerGame.emit_signal("item_storage_clicked", item_id)

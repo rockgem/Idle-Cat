@@ -4,18 +4,21 @@ var ref = null
 
 func _ready():
 	ManagerGame.connect("item_clicked", self, 'on_item_clicked')
+	ManagerGame.connect("item_storage_clicked", self, 'on_item_storage_clicked')
 
 
 func on_item_clicked(own):
-	if ref == null:
-		ref = own
-	else:
-		return
+	
+	ref = own
+	
 	
 	$Layer1.hide()
 	$PlacementControls.show()
 
 
+func on_item_storage_clicked(item_id):
+	$Layer1.hide()
+	$PlacementControls.show()
 
 
 
