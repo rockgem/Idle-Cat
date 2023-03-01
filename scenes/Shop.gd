@@ -30,4 +30,4 @@ func _on_BuyConfirm_pressed():
 
 
 func _on_CloseShop_pressed():
-	get_node('%Shop').hide()
+	hide()

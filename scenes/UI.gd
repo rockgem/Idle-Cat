@@ -36,4 +36,4 @@ func _on_Buy_pressed():
 
 
 func _on_Storage_pressed():
-	pass # Replace with function body.
+	$StorageControl.show()

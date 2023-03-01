@@ -1,9 +1,8 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://scenes/UI.gd" type="Script" id=1]
 [ext_resource path="res://actors/Shop.tscn" type="PackedScene" id=2]
-[ext_resource path="res://resources/styles/panel_big_1.tres" type="StyleBox" id=4]
-[ext_resource path="res://resources/styles/theme_no_scroll.tres" type="Theme" id=9]
+[ext_resource path="res://actors/StorageControl.tscn" type="PackedScene" id=3]
 
 [node name="UI" type="Control"]
 anchor_right = 1.0
@@ -73,34 +72,8 @@ margin_bottom = 20.0
 size_flags_horizontal = 3
 text = "Place"
 
-[node name="StorageControl" type="Control" parent="."]
+[node name="StorageControl" parent="." instance=ExtResource( 3 )]
 visible = false
-anchor_right = 1.0
-anchor_bottom = 1.0
-mouse_filter = 1
-
-[node name="Panel" type="Panel" parent="StorageControl"]
-anchor_top = 1.0
-anchor_right = 1.0
-anchor_bottom = 1.0
-margin_left = 3.0
-margin_top = -42.0
-margin_right = -3.0
-margin_bottom = -4.0
-custom_styles/panel = ExtResource( 4 )
-
-[node name="ScrollContainer" type="ScrollContainer" parent="StorageControl/Panel"]
-anchor_right = 1.0
-anchor_bottom = 1.0
-margin_left = 4.0
-margin_top = 3.0
-margin_right = -4.0
-margin_bottom = -3.0
-theme = ExtResource( 9 )
-scroll_vertical_enabled = false
-
-[node name="StorageList" type="HBoxContainer" parent="StorageControl/Panel/ScrollContainer"]
-unique_name_in_owner = true
 
 [node name="Shop" parent="." instance=ExtResource( 2 )]
 visible = false
