@@ -34,3 +34,4 @@ scroll_vertical_enabled = false
 unique_name_in_owner = true
 
 [connection signal="gui_input" from="." to="." method="_on_StorageControl_gui_input"]
+[connection signal="visibility_changed" from="." to="." method="_on_StorageControl_visibility_changed"]

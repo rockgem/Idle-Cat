@@ -51,22 +51,21 @@ margin_bottom = -5.0
 alignment = 1
 
 [node name="Left" type="Button" parent="PlacementControls/HBoxContainer"]
-margin_right = 82.0
+margin_right = 53.0
 margin_bottom = 20.0
 size_flags_horizontal = 3
 text = "Flip"
 
-[node name="Right" type="Button" parent="PlacementControls/HBoxContainer"]
-visible = false
+[node name="ToStorage" type="Button" parent="PlacementControls/HBoxContainer"]
 margin_left = 57.0
 margin_right = 110.0
 margin_bottom = 20.0
 size_flags_horizontal = 3
-text = "Right"
+text = "Storage"
 
 [node name="Place" type="Button" parent="PlacementControls/HBoxContainer"]
 unique_name_in_owner = true
-margin_left = 86.0
+margin_left = 114.0
 margin_right = 168.0
 margin_bottom = 20.0
 size_flags_horizontal = 3
@@ -81,4 +80,5 @@ visible = false
 [connection signal="pressed" from="Layer1/VBoxContainer/Buy" to="." method="_on_Buy_pressed"]
 [connection signal="pressed" from="Layer1/VBoxContainer/Storage" to="." method="_on_Storage_pressed"]
 [connection signal="pressed" from="PlacementControls/HBoxContainer/Left" to="." method="_on_Left_pressed"]
+[connection signal="pressed" from="PlacementControls/HBoxContainer/ToStorage" to="." method="_on_ToStorage_pressed"]
 [connection signal="pressed" from="PlacementControls/HBoxContainer/Place" to="." method="_on_Place_pressed"]

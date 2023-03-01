@@ -47,17 +47,19 @@ func save_game():
 	f.close()
 
 
-func buy_item(item_id: String):
-	if all_items.has(item_id) == false:
-		return
-	
+func add_item_to_storage(item_id: String):
 	var data = all_items.get(item_id)
 	data['stack'] = 1
-	
+
 	if player_data['inv_items'].has(item_id):
 		player_data['inv_items'].get(item_id)['stack'] += 1
 	else:
 		player_data['inv_items'][item_id] = data
+
+
+func buy_item(item_id: String):
+	if all_items.has(item_id) == false:
+		return
 	
 	emit_signal("item_bought", item_id)
 

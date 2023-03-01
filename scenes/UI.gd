@@ -37,3 +37,10 @@ func _on_Buy_pressed():
 
 func _on_Storage_pressed():
 	$StorageControl.show()
+
+
+func _on_ToStorage_pressed():
+	ManagerGame.add_item_to_storage(ref.item_id)
+	$Layer1.show()
+	$PlacementControls.hide()
+	ref.queue_free()
