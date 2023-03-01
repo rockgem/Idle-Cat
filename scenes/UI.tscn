@@ -1,12 +1,8 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://scenes/UI.gd" type="Script" id=1]
-[ext_resource path="res://assets/store/pixel-box.jpeg" type="Texture" id=2]
-[ext_resource path="res://actors/ShopDisplay.tscn" type="PackedScene" id=3]
+[ext_resource path="res://actors/Shop.tscn" type="PackedScene" id=2]
 [ext_resource path="res://resources/styles/panel_big_1.tres" type="StyleBox" id=4]
-[ext_resource path="res://resources/styles/font12.tres" type="DynamicFont" id=5]
-[ext_resource path="res://resources/styles/panel_big_gray_1.tres" type="StyleBox" id=6]
-[ext_resource path="res://resources/styles/button_yellow_normal.tres" type="StyleBox" id=7]
 [ext_resource path="res://resources/styles/theme_no_scroll.tres" type="Theme" id=9]
 
 [node name="UI" type="Control"]
@@ -16,7 +12,6 @@ mouse_filter = 2
 script = ExtResource( 1 )
 
 [node name="Layer1" type="Control" parent="."]
-visible = false
 anchor_right = 1.0
 anchor_bottom = 1.0
 mouse_filter = 2
@@ -104,174 +99,13 @@ margin_bottom = -3.0
 theme = ExtResource( 9 )
 scroll_vertical_enabled = false
 
-[node name="HBoxContainer" type="HBoxContainer" parent="StorageControl/Panel/ScrollContainer"]
-
-[node name="Shop" type="Panel" parent="."]
+[node name="StorageList" type="HBoxContainer" parent="StorageControl/Panel/ScrollContainer"]
 unique_name_in_owner = true
+
+[node name="Shop" parent="." instance=ExtResource( 2 )]
 visible = false
-anchor_right = 1.0
-anchor_bottom = 1.0
-margin_left = 12.0
-margin_top = 75.0
-margin_right = -12.0
-margin_bottom = -43.0
-custom_styles/panel = ExtResource( 4 )
-
-[node name="CanvasLayer" type="CanvasLayer" parent="Shop"]
-layer = 20
-
-[node name="ConfirmControl" type="Control" parent="Shop/CanvasLayer"]
-visible = false
-anchor_right = 1.0
-anchor_bottom = 1.0
-
-[node name="ConfirmPanel" type="Panel" parent="Shop/CanvasLayer/ConfirmControl"]
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-margin_left = -71.0
-margin_top = -13.0
-margin_right = 71.0
-margin_bottom = 45.0
-custom_styles/panel = ExtResource( 6 )
-
-[node name="VBoxContainer" type="VBoxContainer" parent="Shop/CanvasLayer/ConfirmControl/ConfirmPanel"]
-anchor_right = 1.0
-anchor_bottom = 1.0
-margin_left = 6.0
-margin_top = 4.0
-margin_right = -6.0
-margin_bottom = -4.0
-
-[node name="Label" type="Label" parent="Shop/CanvasLayer/ConfirmControl/ConfirmPanel/VBoxContainer"]
-margin_right = 130.0
-margin_bottom = 15.0
-text = "Purchase this?"
-
-[node name="BuyConfirm" type="Button" parent="Shop/CanvasLayer/ConfirmControl/ConfirmPanel/VBoxContainer"]
-margin_top = 19.0
-margin_right = 130.0
-margin_bottom = 34.0
-custom_colors/font_color = Color( 0.388235, 0.396078, 0.270588, 1 )
-custom_fonts/font = ExtResource( 5 )
-custom_styles/hover = ExtResource( 7 )
-custom_styles/pressed = ExtResource( 7 )
-custom_styles/focus = ExtResource( 7 )
-custom_styles/disabled = ExtResource( 7 )
-custom_styles/normal = ExtResource( 7 )
-text = "Buy 100G"
-
-[node name="VBoxContainer" type="VBoxContainer" parent="Shop"]
-anchor_right = 1.0
-anchor_bottom = 1.0
-margin_left = 5.0
-margin_top = 7.0
-margin_right = -5.0
-margin_bottom = -5.0
-custom_constants/separation = 16
-
-[node name="VBoxContainer" type="VBoxContainer" parent="Shop/VBoxContainer"]
-margin_right = 146.0
-margin_bottom = 83.0
-
-[node name="Label" type="Label" parent="Shop/VBoxContainer/VBoxContainer"]
-margin_right = 146.0
-margin_bottom = 15.0
-custom_colors/font_color = Color( 0.337255, 0.337255, 0.337255, 1 )
-custom_fonts/font = ExtResource( 5 )
-text = "Purchase furniture"
-align = 1
-
-[node name="TextureRect" type="TextureRect" parent="Shop/VBoxContainer/VBoxContainer"]
-margin_top = 19.0
-margin_right = 146.0
-margin_bottom = 83.0
-rect_min_size = Vector2( 64, 64 )
-texture = ExtResource( 2 )
-expand = true
-stretch_mode = 6
-
-[node name="ScrollContainer" type="ScrollContainer" parent="Shop/VBoxContainer"]
-margin_top = 99.0
-margin_right = 146.0
-margin_bottom = 219.0
-size_flags_vertical = 3
-theme = ExtResource( 9 )
-
-[node name="CenterContainer" type="CenterContainer" parent="Shop/VBoxContainer/ScrollContainer"]
-margin_right = 146.0
-margin_bottom = 366.0
-mouse_filter = 1
-size_flags_horizontal = 7
-
-[node name="GridContainer" type="GridContainer" parent="Shop/VBoxContainer/ScrollContainer/CenterContainer"]
-margin_left = 17.0
-margin_right = 129.0
-margin_bottom = 366.0
-columns = 2
-
-[node name="ShopDisplay" parent="Shop/VBoxContainer/ScrollContainer/CenterContainer/GridContainer" instance=ExtResource( 3 )]
-margin_right = 54.0
-margin_bottom = 70.0
-
-[node name="ShopDisplay2" parent="Shop/VBoxContainer/ScrollContainer/CenterContainer/GridContainer" instance=ExtResource( 3 )]
-margin_left = 58.0
-margin_right = 112.0
-margin_bottom = 70.0
-
-[node name="ShopDisplay3" parent="Shop/VBoxContainer/ScrollContainer/CenterContainer/GridContainer" instance=ExtResource( 3 )]
-margin_top = 74.0
-margin_right = 54.0
-margin_bottom = 144.0
-
-[node name="ShopDisplay4" parent="Shop/VBoxContainer/ScrollContainer/CenterContainer/GridContainer" instance=ExtResource( 3 )]
-margin_left = 58.0
-margin_top = 74.0
-margin_right = 112.0
-margin_bottom = 144.0
-
-[node name="ShopDisplay5" parent="Shop/VBoxContainer/ScrollContainer/CenterContainer/GridContainer" instance=ExtResource( 3 )]
-margin_top = 148.0
-margin_right = 54.0
-margin_bottom = 218.0
-
-[node name="ShopDisplay6" parent="Shop/VBoxContainer/ScrollContainer/CenterContainer/GridContainer" instance=ExtResource( 3 )]
-margin_left = 58.0
-margin_top = 148.0
-margin_right = 112.0
-margin_bottom = 218.0
-
-[node name="ShopDisplay7" parent="Shop/VBoxContainer/ScrollContainer/CenterContainer/GridContainer" instance=ExtResource( 3 )]
-margin_top = 222.0
-margin_right = 54.0
-margin_bottom = 292.0
-
-[node name="ShopDisplay8" parent="Shop/VBoxContainer/ScrollContainer/CenterContainer/GridContainer" instance=ExtResource( 3 )]
-margin_left = 58.0
-margin_top = 222.0
-margin_right = 112.0
-margin_bottom = 292.0
-
-[node name="ShopDisplay9" parent="Shop/VBoxContainer/ScrollContainer/CenterContainer/GridContainer" instance=ExtResource( 3 )]
-margin_top = 296.0
-margin_right = 54.0
-margin_bottom = 366.0
-
-[node name="ShopDisplay10" parent="Shop/VBoxContainer/ScrollContainer/CenterContainer/GridContainer" instance=ExtResource( 3 )]
-margin_left = 58.0
-margin_top = 296.0
-margin_right = 112.0
-margin_bottom = 366.0
-
-[node name="CloseShop" type="Button" parent="Shop/VBoxContainer"]
-margin_top = 235.0
-margin_right = 146.0
-margin_bottom = 250.0
-text = "Close"
 
 [connection signal="pressed" from="Layer1/VBoxContainer/Buy" to="." method="_on_Buy_pressed"]
 [connection signal="pressed" from="Layer1/VBoxContainer/Storage" to="." method="_on_Storage_pressed"]
 [connection signal="pressed" from="PlacementControls/HBoxContainer/Left" to="." method="_on_Left_pressed"]
 [connection signal="pressed" from="PlacementControls/HBoxContainer/Place" to="." method="_on_Place_pressed"]
-[connection signal="pressed" from="Shop/VBoxContainer/CloseShop" to="." method="_on_CloseShop_pressed"]

@@ -1,0 +1,144 @@
+[gd_scene load_steps=9 format=2]
+
+[ext_resource path="res://resources/styles/font12.tres" type="DynamicFont" id=1]
+[ext_resource path="res://actors/ShopDisplay.tscn" type="PackedScene" id=2]
+[ext_resource path="res://resources/styles/button_yellow_normal.tres" type="StyleBox" id=4]
+[ext_resource path="res://resources/styles/panel_big_gray_1.tres" type="StyleBox" id=5]
+[ext_resource path="res://resources/styles/panel_big_1.tres" type="StyleBox" id=6]
+[ext_resource path="res://resources/styles/theme_no_scroll.tres" type="Theme" id=8]
+[ext_resource path="res://assets/store/pixel-box.jpeg" type="Texture" id=9]
+[ext_resource path="res://scenes/Shop.gd" type="Script" id=10]
+
+[node name="Shop" type="Panel"]
+unique_name_in_owner = true
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 12.0
+margin_top = 75.0
+margin_right = -12.0
+margin_bottom = -43.0
+custom_styles/panel = ExtResource( 6 )
+script = ExtResource( 10 )
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+layer = 20
+
+[node name="ConfirmControl" type="Control" parent="CanvasLayer"]
+unique_name_in_owner = true
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+
+[node name="ConfirmPanel" type="Panel" parent="CanvasLayer/ConfirmControl"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -71.0
+margin_top = -13.0
+margin_right = 71.0
+margin_bottom = 45.0
+custom_styles/panel = ExtResource( 5 )
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/ConfirmControl/ConfirmPanel"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 6.0
+margin_top = 4.0
+margin_right = -6.0
+margin_bottom = -4.0
+
+[node name="Label" type="Label" parent="CanvasLayer/ConfirmControl/ConfirmPanel/VBoxContainer"]
+margin_right = 130.0
+margin_bottom = 15.0
+text = "Purchase this?"
+
+[node name="BuyConfirm" type="Button" parent="CanvasLayer/ConfirmControl/ConfirmPanel/VBoxContainer"]
+margin_top = 19.0
+margin_right = 130.0
+margin_bottom = 34.0
+custom_colors/font_color = Color( 0.388235, 0.396078, 0.270588, 1 )
+custom_fonts/font = ExtResource( 1 )
+custom_styles/hover = ExtResource( 4 )
+custom_styles/pressed = ExtResource( 4 )
+custom_styles/focus = ExtResource( 4 )
+custom_styles/disabled = ExtResource( 4 )
+custom_styles/normal = ExtResource( 4 )
+text = "Buy 100G"
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 5.0
+margin_top = 7.0
+margin_right = -5.0
+margin_bottom = -5.0
+custom_constants/separation = 16
+
+[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer"]
+margin_right = 146.0
+margin_bottom = 83.0
+
+[node name="Label" type="Label" parent="VBoxContainer/VBoxContainer"]
+margin_right = 146.0
+margin_bottom = 15.0
+custom_colors/font_color = Color( 0.337255, 0.337255, 0.337255, 1 )
+custom_fonts/font = ExtResource( 1 )
+text = "Purchase furniture"
+align = 1
+
+[node name="TextureRect" type="TextureRect" parent="VBoxContainer/VBoxContainer"]
+margin_top = 19.0
+margin_right = 146.0
+margin_bottom = 83.0
+rect_min_size = Vector2( 64, 64 )
+texture = ExtResource( 9 )
+expand = true
+stretch_mode = 6
+
+[node name="ScrollContainer" type="ScrollContainer" parent="VBoxContainer"]
+margin_top = 99.0
+margin_right = 146.0
+margin_bottom = 219.0
+size_flags_vertical = 3
+theme = ExtResource( 8 )
+
+[node name="CenterContainer" type="CenterContainer" parent="VBoxContainer/ScrollContainer"]
+margin_right = 146.0
+margin_bottom = 144.0
+mouse_filter = 1
+size_flags_horizontal = 7
+
+[node name="ShopList" type="GridContainer" parent="VBoxContainer/ScrollContainer/CenterContainer"]
+unique_name_in_owner = true
+margin_left = 17.0
+margin_right = 129.0
+margin_bottom = 144.0
+columns = 2
+
+[node name="ShopDisplay" parent="VBoxContainer/ScrollContainer/CenterContainer/ShopList" instance=ExtResource( 2 )]
+margin_right = 54.0
+margin_bottom = 70.0
+item_id = "couch_1"
+
+[node name="ShopDisplay2" parent="VBoxContainer/ScrollContainer/CenterContainer/ShopList" instance=ExtResource( 2 )]
+margin_left = 58.0
+margin_right = 112.0
+margin_bottom = 70.0
+item_id = "chair_1"
+
+[node name="ShopDisplay3" parent="VBoxContainer/ScrollContainer/CenterContainer/ShopList" instance=ExtResource( 2 )]
+margin_top = 74.0
+margin_right = 54.0
+margin_bottom = 144.0
+item_id = "shelf_1"
+
+[node name="CloseShop" type="Button" parent="VBoxContainer"]
+margin_top = 235.0
+margin_right = 146.0
+margin_bottom = 250.0
+text = "Close"
+
+[connection signal="gui_input" from="CanvasLayer/ConfirmControl" to="." method="_on_ConfirmControl_gui_input"]
+[connection signal="pressed" from="CanvasLayer/ConfirmControl/ConfirmPanel/VBoxContainer/BuyConfirm" to="." method="_on_BuyConfirm_pressed"]
+[connection signal="pressed" from="VBoxContainer/CloseShop" to="." method="_on_CloseShop_pressed"]

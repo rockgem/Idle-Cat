@@ -4,6 +4,8 @@ var ref = null
 
 func _ready():
 	ManagerGame.connect("item_clicked", self, 'on_item_clicked')
+	
+	
 
 
 func on_item_clicked(own):
@@ -14,6 +16,9 @@ func on_item_clicked(own):
 	
 	$Layer1.hide()
 	$PlacementControls.show()
+
+
+
 
 
 func _on_Place_pressed():
@@ -30,10 +35,6 @@ func _on_Left_pressed():
 
 func _on_Buy_pressed():
 	get_node('%Shop').show()
-
-
-func _on_CloseShop_pressed():
-	get_node('%Shop').hide()
 
 
 func _on_Storage_pressed():
