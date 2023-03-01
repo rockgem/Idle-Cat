@@ -19,4 +19,9 @@ func _ready():
 func _on_StorageDisplay_gui_input(event):
 	if event is InputEventScreenTouch and !event.pressed:
 		data_inside['stack'] -= 1
+		
+		if data_inside['stack'] <= 0:
+			print_debug('delete')
+			ManagerGame.player_data['inv_items'].erase(item_id)
+		
 		ManagerGame.emit_signal("item_storage_clicked", item_id)

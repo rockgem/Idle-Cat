@@ -21,9 +21,9 @@ func on_item_storage_clicked(item_id):
 	$PlacementControls.show()
 
 
-
 func _on_Place_pressed():
-	ref.activate_placement(false)
+	if ref:
+		ref.activate_placement(false)
 	$Layer1.show()
 	$PlacementControls.hide()
 	
