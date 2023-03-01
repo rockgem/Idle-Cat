@@ -133,6 +133,13 @@ margin_right = 54.0
 margin_bottom = 144.0
 item_id = "shelf_1"
 
+[node name="ShopDisplay4" parent="VBoxContainer/ScrollContainer/CenterContainer/ShopList" instance=ExtResource( 2 )]
+margin_left = 58.0
+margin_top = 74.0
+margin_right = 112.0
+margin_bottom = 144.0
+item_id = "nightstand_1"
+
 [node name="CloseShop" type="Button" parent="VBoxContainer"]
 margin_top = 235.0
 margin_right = 146.0
