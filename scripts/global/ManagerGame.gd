@@ -7,6 +7,8 @@ signal item_clicked(own)
 
 const SAVE_PATH = 'user://player_data.json'
 
+# this is where all items in the game is stored
+# will be used in shop buying to search thru the items' data
 var all_items: Dictionary = {}
 
 
@@ -15,7 +17,10 @@ var player_data: Dictionary = {
 	'inv_items': {}
 }
 
+
+# is used when placing an object in world
 var is_placing: bool = false
+
 
 func _ready():
 	var f = File.new()
@@ -26,8 +31,6 @@ func _ready():
 		load_game()
 	
 	f.close()
-	
-	
 
 
 func load_game():
