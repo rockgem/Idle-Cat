@@ -10,6 +10,11 @@ func _ready():
 
 func on_shop_list_clicked(item_id: String):
 	item_id_ref = item_id
+	
+	var price = ManagerGame.all_items.get(item_id).get('price')
+	
+	get_node('%ConfirmControl').get_node("ConfirmPanel/VBoxContainer/BuyConfirm").text = 'Buy %s' % str(price)
+	
 	get_node('%ConfirmControl').show()
 
 

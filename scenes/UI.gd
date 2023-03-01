@@ -4,8 +4,6 @@ var ref = null
 
 func _ready():
 	ManagerGame.connect("item_clicked", self, 'on_item_clicked')
-	
-	
 
 
 func on_item_clicked(own):
