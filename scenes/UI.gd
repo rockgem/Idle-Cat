@@ -23,7 +23,6 @@ func on_item_clicked(own):
 	
 	ref = own
 	
-	
 	$Layer1.hide()
 	$StudyingBox.hide()
 	$PlacementControls.show()

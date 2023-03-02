@@ -6,5 +6,5 @@
 [node name="Object" type="Sprite"]
 texture = ExtResource( 1 )
 centered = false
-offset = Vector2( -16, -24 )
+offset = Vector2( -16, 0 )
 script = ExtResource( 2 )
