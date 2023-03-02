@@ -13,10 +13,18 @@ const SAVE_PATH = 'user://player_data.json'
 # will be used in shop buying to search thru the items' data
 var all_items: Dictionary = {}
 
+var world_obj_base = {
+	'item_id': '',
+	'global_position_x': 0.0,
+	'global_position_y': 0.0,
+	'rotated': false
+}
+
 
 var player_data: Dictionary = {
 	'money': 100,
-	'inv_items': {}
+	'inv_items': {},
+	'world_objs': []
 }
 
 

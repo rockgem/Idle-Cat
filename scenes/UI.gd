@@ -27,6 +27,10 @@ func _on_Place_pressed():
 	$Layer1.show()
 	$PlacementControls.hide()
 	
+	ref.obj_data['global_position_x'] = ref.global_position.x
+	ref.obj_data['global_position_y'] = ref.global_position.y
+	ref.obj_data['rotated'] = ref.flip_h
+	
 	ref = null
 
 
@@ -43,6 +47,7 @@ func _on_Storage_pressed():
 
 
 func _on_ToStorage_pressed():
+	ManagerGame.player_data['world_objs'].erase(ref.obj_data)
 	ManagerGame.add_item_to_storage(ref.item_id)
 	$Layer1.show()
 	$PlacementControls.hide()

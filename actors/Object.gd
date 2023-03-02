@@ -5,9 +5,18 @@ extends Sprite
 var is_selected: bool = false
 var item_id
 
+var is_from_load: bool = false
+
+var obj_data = {}
+
 
 func _ready():
 	activate_placement(false)
+	
+	if is_from_load == false:
+		var obj_data = ManagerGame.world_obj_base.duplicate()
+		obj_data['item_id'] = item_id
+		ManagerGame.player_data['world_objs'].append(obj_data)
 
 
 func _unhandled_input(event):
@@ -23,3 +32,4 @@ func _unhandled_input(event):
 func activate_placement(b: bool):
 	ManagerGame.is_placing = b
 	is_selected = b
+	
