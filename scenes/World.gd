@@ -8,6 +8,8 @@ func _ready():
 	ManagerGame.connect("item_bought", self, 'on_item_bought')
 	ManagerGame.connect("item_storage_clicked", self, 'on_item_bought')
 	
+	ManagerGame.floor_tiles_ref = $Floor
+	
 	load_furnitures()
 
 

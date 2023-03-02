@@ -11,6 +11,8 @@ var obj_data = {}
 
 
 func _ready():
+	
+	offset = -get_rect().size / 2
 	activate_placement(false)
 	
 	if is_from_load == false:
@@ -25,8 +27,11 @@ func _unhandled_input(event):
 			activate_placement(true)
 			ManagerGame.emit_signal("item_clicked", self)
 	
-	if event is InputEventScreenDrag and ManagerGame.is_placing and is_selected:
-		global_position = Vector2(stepify(event.position.x, 16), stepify(event.position.y, 8))
+	if event is InputEventScreenTouch and !event.pressed and ManagerGame.is_placing and is_selected:
+		var l_pos = ManagerGame.floor_tiles_ref.world_to_map(event.position)
+		var g_pos = ManagerGame.floor_tiles_ref.map_to_world(l_pos)
+#		global_position = Vector2(stepify(event.position.x, 16), stepify(event.position.y, 8))
+		global_position = g_pos
 
 
 func activate_placement(b: bool):

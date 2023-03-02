@@ -8,7 +8,7 @@
 [ext_resource path="res://assets/furniture_wall_floor_cat/Wall Set/Bricks.png" type="Texture" id=6]
 
 [sub_resource type="ConvexPolygonShape2D" id=1]
-points = PoolVector2Array( 16, 1, 32, 8, 25, 12, 16, 17, 5, 11, 0, 8 )
+points = PoolVector2Array( 16, 1, 32, 9, 25, 12, 16, 17, 5, 11, 0, 9 )
 
 [resource]
 0/name = "Black and White Tiles.png 0"

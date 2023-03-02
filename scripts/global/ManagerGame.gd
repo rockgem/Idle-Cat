@@ -8,6 +8,8 @@ signal item_storage_clicked(item_id)
 signal studying_activated(boolean)
 
 
+var floor_tiles_ref: TileMap
+
 
 const SAVE_PATH = 'user://player_data.json'
 
