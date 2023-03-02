@@ -29,9 +29,9 @@ func on_item_clicked(own):
 
 
 func on_item_storage_clicked(item_id):
-	$Layer1.hide()
-	$StudyingBox.hide()
-	$PlacementControls.show()
+	$Layer1.show()
+	$StudyingBox.show()
+	$PlacementControls.hide()
 
 
 func _on_Place_pressed():
