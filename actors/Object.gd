@@ -32,6 +32,13 @@ func _unhandled_input(event):
 		var l_pos = ManagerGame.floor_tiles_ref.world_to_map(event.position)
 		var g_pos = ManagerGame.floor_tiles_ref.map_to_world(l_pos)
 		
+		var has_tile = false
+		if ManagerGame.floor_tiles_ref.get_cellv(l_pos) != -1:
+			has_tile = true
+		
+		if has_tile == false:
+			return
+		
 		$"/root/Sfx".get_node('Pop1').play()
 		
 #		global_position = Vector2(stepify(event.position.x, 16), stepify(event.position.y, 8))
