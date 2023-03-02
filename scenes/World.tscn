@@ -16,6 +16,9 @@ script = ExtResource( 7 )
 [node name="Skytest-1" type="Sprite" parent="."]
 position = Vector2( 92, 172 )
 texture = ExtResource( 1 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="Floor" type="TileMap" parent="."]
 mode = 1
