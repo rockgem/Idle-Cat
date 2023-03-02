@@ -7,9 +7,6 @@ func _ready():
 	
 	ManagerGame.connect("item_clicked", self, 'on_item_clicked')
 	ManagerGame.connect("item_storage_clicked", self, 'on_item_storage_clicked')
-	
-	if ManagerGame['player_data']:
-		set_physics_process(true)
 
 
 # this is only used to calculate time when studying at the moment
