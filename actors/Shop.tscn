@@ -104,7 +104,7 @@ size_flags_vertical = 3
 theme = ExtResource( 8 )
 
 [node name="CenterContainer" type="CenterContainer" parent="VBoxContainer/ScrollContainer"]
-margin_right = 134.0
+margin_right = 112.0
 margin_bottom = 144.0
 mouse_filter = 1
 size_flags_horizontal = 7

@@ -11,14 +11,13 @@ var obj_data = {}
 
 
 func _ready():
-	
 	offset = -get_rect().size / 2
 #	offset.x -= float(int(get_rect().size.x) % 32)
 	offset.y -= float(int(get_rect().size.y) % 24)
 	activate_placement(false)
 	
 	if is_from_load == false:
-		var obj_data = ManagerGame.world_obj_base.duplicate()
+		obj_data = ManagerGame.world_obj_base.duplicate()
 		obj_data['item_id'] = item_id
 		ManagerGame.player_data['world_objs'].append(obj_data)
 

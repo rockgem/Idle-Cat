@@ -37,6 +37,9 @@ func on_item_storage_clicked(item_id):
 func _on_Place_pressed():
 	if ref:
 		ref.activate_placement(false)
+	else:
+		return
+	
 	$Layer1.show()
 	$StudyingBox.show()
 	$PlacementControls.hide()
