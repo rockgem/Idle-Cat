@@ -13,6 +13,7 @@ var obj_data = {}
 func _ready():
 	
 	offset = -get_rect().size / 2
+	offset.y -= float(int(get_rect().size.y) % 24)
 	activate_placement(false)
 	
 	if is_from_load == false:
