@@ -13,7 +13,7 @@ func _ready():
 func _physics_process(delta):
 	ManagerGame.player_data['study_time_left'] -= delta
 	
-	$VBoxContainer/Study.text = ManagerGame.secs_to_time(ManagerGame.player_data['study_time_left'])
+	$StudyingBox/Study.text = ManagerGame.secs_to_time(ManagerGame.player_data['study_time_left'])
 
 
 func on_item_clicked(own):
@@ -22,11 +22,13 @@ func on_item_clicked(own):
 	
 	
 	$Layer1.hide()
+	$StudyingBox.hide()
 	$PlacementControls.show()
 
 
 func on_item_storage_clicked(item_id):
 	$Layer1.hide()
+	$StudyingBox.hide()
 	$PlacementControls.show()
 
 
@@ -34,6 +36,7 @@ func _on_Place_pressed():
 	if ref:
 		ref.activate_placement(false)
 	$Layer1.show()
+	$StudyingBox.show()
 	$PlacementControls.hide()
 	
 	ref.obj_data['global_position_x'] = ref.global_position.x
@@ -66,22 +69,22 @@ func _on_ToStorage_pressed():
 func _on_Study_pressed():
 	var time
 	
-	if $VBoxContainer/StudyTimeSelect.selected < 0:
+	if $StudyingBox/StudyTimeSelect.selected < 0:
 		return
 	
 	# checks if the current savefile is studying 
 	# immediately stops the timer when already studying
 	if ManagerGame.player_data['is_studying']:
 		set_physics_process(false)
-		$VBoxContainer/Study.text = 'Study'
+		$StudyingBox/Study.text = 'Study'
 		ManagerGame.player_data['is_studying'] = false
 		ManagerGame.emit_signal("studying_activated", false)
 		return
 	
-	if $VBoxContainer/StudyTimeSelect.selected == 0:
+	if $StudyingBox/StudyTimeSelect.selected == 0:
 		time = 5
 	else:
-		time = ($VBoxContainer/StudyTimeSelect.selected + 1) * 5
+		time = ($StudyingBox/StudyTimeSelect.selected + 1) * 5
 	
 	ManagerGame.player_data['is_studying'] = true
 	ManagerGame.player_data['study_time_left'] = float(time * 60)
