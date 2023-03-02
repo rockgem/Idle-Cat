@@ -48,6 +48,8 @@ func _on_Place_pressed():
 
 func _on_Left_pressed():
 	ref.flip_h = !ref.flip_h
+	
+	$"/root/Sfx".get_node('Pop1').play()
 
 
 func _on_Buy_pressed():

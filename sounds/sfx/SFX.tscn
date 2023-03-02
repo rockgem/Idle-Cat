@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://sounds/sfx/Pop1.wav" type="AudioStream" id=1]
+
+[node name="SFX" type="Node"]
+
+[node name="Pop1" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 1 )

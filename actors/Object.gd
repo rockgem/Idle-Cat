@@ -31,6 +31,9 @@ func _unhandled_input(event):
 	if event is InputEventScreenTouch and !event.pressed and ManagerGame.is_placing and is_selected:
 		var l_pos = ManagerGame.floor_tiles_ref.world_to_map(event.position)
 		var g_pos = ManagerGame.floor_tiles_ref.map_to_world(l_pos)
+		
+		$"/root/Sfx".get_node('Pop1').play()
+		
 #		global_position = Vector2(stepify(event.position.x, 16), stepify(event.position.y, 8))
 		global_position = g_pos
 

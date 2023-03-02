@@ -17,6 +17,7 @@ config/icon="res://icon.png"
 [autoload]
 
 ManagerGame="*res://scripts/global/ManagerGame.gd"
+Sfx="*res://sounds/sfx/SFX.tscn"
 
 [display]
 
