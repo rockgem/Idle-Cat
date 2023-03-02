@@ -42,20 +42,8 @@ var player_data: Dictionary = {
 # is used when placing an object in world
 var is_placing: bool = false
 
-var payment
-
 
 func _ready():
-	if Engine.has_singleton('GodotGooglePlayBilling'):
-		payment = Engine.get_singleton('GodotGooglePlayBilling')
-		
-		payment.connect('billing_resume', self, 'on_billing_resume')
-		payment.connect('connected', self, 'on_connected')
-		
-		payment.startConnection()
-	else:
-		print("Android IAP support is not enabled. Make sure you have enabled 'Custom Build' and the GodotGooglePlayBilling plugin in your Android export settings! IAP will not work.")
-	
 	var f = File.new()
 	f.open("res://resources/data/all_items.json", f.READ)
 	all_items = parse_json(f.get_as_text())
