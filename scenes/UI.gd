@@ -3,8 +3,16 @@ extends Control
 var ref = null
 
 func _ready():
+	set_physics_process(false)
+	
 	ManagerGame.connect("item_clicked", self, 'on_item_clicked')
 	ManagerGame.connect("item_storage_clicked", self, 'on_item_storage_clicked')
+
+
+func _physics_process(delta):
+	ManagerGame.player_data['study_time_left'] -= delta
+	
+	$VBoxContainer/Study.text = ManagerGame.secs_to_time(ManagerGame.player_data['study_time_left'])
 
 
 func on_item_clicked(own):
@@ -52,3 +60,30 @@ func _on_ToStorage_pressed():
 	$Layer1.show()
 	$PlacementControls.hide()
 	ref.queue_free()
+
+
+func _on_Study_pressed():
+	var time
+	
+	if $VBoxContainer/StudyTimeSelect.selected < 0:
+		return
+	
+	if ManagerGame.player_data['is_studying']:
+		set_physics_process(false)
+		$VBoxContainer/Study.text = 'Study'
+		ManagerGame.player_data['is_studying'] = false
+		return
+	
+	if $VBoxContainer/StudyTimeSelect.selected == 0:
+		time = 5
+	else:
+		time = ($VBoxContainer/StudyTimeSelect.selected + 1) * 5
+	
+	ManagerGame.player_data['is_studying'] = true
+	ManagerGame.player_data['study_time_left'] = float(time * 60)
+	
+	set_physics_process(true)
+
+
+func _on_StudyTimeSelect_item_selected(index):
+	pass # Replace with function body.

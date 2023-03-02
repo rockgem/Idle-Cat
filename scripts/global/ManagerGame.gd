@@ -27,6 +27,8 @@ var world_obj_base = {
 ########################################################################
 
 var player_data: Dictionary = {
+	'is_studying': false,
+	'study_time_left': 0.0,
 	'money': 100,
 	'inv_items': {},
 	'world_objs': [] # array of world_obj_base dictionaries
@@ -77,6 +79,18 @@ func buy_item(item_id: String):
 		return
 	
 	emit_signal("item_bought", item_id)
+
+
+func secs_to_time(secs: float) -> String:
+	var minute = str(int(secs / 60))
+	var seconds = str(int(secs) % 60)
+	
+	if minute.length() <= 1:
+		minute = minute.insert(0, '0')
+	if seconds.length() <= 1:
+		seconds = seconds.insert(0, '0')
+	
+	return minute + ':' + seconds
 
 
 func _notification(what):
