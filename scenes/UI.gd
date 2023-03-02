@@ -9,6 +9,7 @@ func _ready():
 	ManagerGame.connect("item_storage_clicked", self, 'on_item_storage_clicked')
 
 
+# this is only used to calculate time when studying at the moment
 func _physics_process(delta):
 	ManagerGame.player_data['study_time_left'] -= delta
 	
@@ -68,10 +69,13 @@ func _on_Study_pressed():
 	if $VBoxContainer/StudyTimeSelect.selected < 0:
 		return
 	
+	# checks if the current savefile is studying 
+	# immediately stops the timer when already studying
 	if ManagerGame.player_data['is_studying']:
 		set_physics_process(false)
 		$VBoxContainer/Study.text = 'Study'
 		ManagerGame.player_data['is_studying'] = false
+		ManagerGame.emit_signal("studying_activated", false)
 		return
 	
 	if $VBoxContainer/StudyTimeSelect.selected == 0:
@@ -81,6 +85,8 @@ func _on_Study_pressed():
 	
 	ManagerGame.player_data['is_studying'] = true
 	ManagerGame.player_data['study_time_left'] = float(time * 60)
+	
+	ManagerGame.emit_signal("studying_activated", true)
 	
 	set_physics_process(true)
 

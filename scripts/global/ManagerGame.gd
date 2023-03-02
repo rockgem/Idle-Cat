@@ -5,6 +5,8 @@ signal item_bought(item_id)
 signal item_clicked(own)
 signal item_storage_clicked(item_id)
 
+signal studying_activated(boolean)
+
 
 
 const SAVE_PATH = 'user://player_data.json'
