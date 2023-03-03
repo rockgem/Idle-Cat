@@ -34,8 +34,8 @@ var player_data: Dictionary = {
 	'is_studying': false,
 	'study_time_left': 0.0,
 	'money': 100,
-	'inv_items': {},
-	'world_objs': [] # array of world_obj_base dictionaries
+	'inv_items': {}, # anything that is in storage
+	'world_objs': [] # array of world_obj_base dictionaries, anything that is already placed
 }
 
 
