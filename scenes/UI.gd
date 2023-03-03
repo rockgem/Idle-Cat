@@ -77,8 +77,12 @@ func _on_ToStorage_pressed():
 	ManagerGame.player_data['world_objs'].erase(ref.obj_data)
 	ManagerGame.add_item_to_storage(ref.item_id)
 	$Layer1.show()
+	$StudyingBox.show()
 	$PlacementControls.hide()
+	ref.activate_placement(false)
 	ref.queue_free()
+	
+	ref = null
 
 
 func _on_Study_pressed():

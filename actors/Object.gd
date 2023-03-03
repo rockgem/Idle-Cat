@@ -11,6 +11,7 @@ var obj_data = {}
 
 
 func _ready():
+	
 	offset = -get_rect().size / 2
 #	offset.x -= float(int(get_rect().size.x) % 32)
 	offset.y -= float(int(get_rect().size.y) % 24)
@@ -23,6 +24,7 @@ func _ready():
 
 
 func _unhandled_input(event):
+	print('gfsd')
 	if event is InputEventScreenTouch and !event.pressed and ManagerGame.is_placing == false and is_selected == false:
 		if get_rect().has_point(to_local(event.position)):
 			activate_placement(true)
