@@ -49,3 +49,8 @@ func activate_placement(b: bool):
 	ManagerGame.is_placing = b
 	is_selected = b
 	
+	if b:
+		modulate = Color(1,1,1,0.5)
+	else:
+		modulate = Color(1,1,1,1)
+	
