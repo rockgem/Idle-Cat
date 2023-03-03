@@ -82,6 +82,9 @@ func buy_item(item_id: String):
 	if all_items.has(item_id) == false:
 		return
 	
+	var price = all_items.get(item_id)['price']
+	ManagerGame.player_data['money'] -= price
+	
 	emit_signal("item_bought", item_id)
 
 

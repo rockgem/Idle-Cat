@@ -14,6 +14,14 @@ func _ready():
 
 # this is only used to calculate time when studying at the moment
 func _physics_process(delta):
+	if ManagerGame.player_data['study_time_left'] <= 0:
+		ManagerGame['player_data']['is_studying'] = false
+		ManagerGame.player_data['study_time_left'] = 0.0
+		
+		ManagerGame.player_data['money'] += 10
+		
+		set_physics_process(false)
+	
 	ManagerGame.player_data['study_time_left'] -= delta
 	
 	$StudyingBox/Study.text = ManagerGame.secs_to_time(ManagerGame.player_data['study_time_left'])

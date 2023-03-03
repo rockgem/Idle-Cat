@@ -1,13 +1,17 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://resources/styles/font12.tres" type="DynamicFont" id=1]
 [ext_resource path="res://actors/ShopDisplay.tscn" type="PackedScene" id=2]
+[ext_resource path="res://assets/store/coin.png" type="Texture" id=3]
 [ext_resource path="res://resources/styles/button_yellow_normal.tres" type="StyleBox" id=4]
 [ext_resource path="res://resources/styles/panel_big_gray_1.tres" type="StyleBox" id=5]
 [ext_resource path="res://resources/styles/panel_big_1.tres" type="StyleBox" id=6]
 [ext_resource path="res://resources/styles/theme_no_scroll.tres" type="Theme" id=8]
 [ext_resource path="res://assets/store/pixel-box.jpeg" type="Texture" id=9]
 [ext_resource path="res://scenes/Shop.gd" type="Script" id=10]
+
+[sub_resource type="StyleBoxEmpty" id=1]
+content_margin_left = 16.0
 
 [node name="Shop" type="Panel"]
 unique_name_in_owner = true
@@ -75,9 +79,29 @@ margin_right = -11.0
 margin_bottom = -5.0
 custom_constants/separation = 16
 
-[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer"]
+[node name="Gold" type="Label" parent="VBoxContainer"]
+unique_name_in_owner = true
 margin_right = 134.0
-margin_bottom = 83.0
+margin_bottom = 15.0
+custom_colors/font_color = Color( 0.282353, 0.278431, 0.25098, 1 )
+custom_styles/normal = SubResource( 1 )
+text = "500"
+
+[node name="TextureRect" type="TextureRect" parent="VBoxContainer/Gold"]
+anchor_top = 0.5
+anchor_bottom = 0.5
+margin_left = -5.0
+margin_top = -10.0
+margin_right = 15.0
+margin_bottom = 10.0
+texture = ExtResource( 3 )
+expand = true
+stretch_mode = 6
+
+[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer"]
+margin_top = 31.0
+margin_right = 134.0
+margin_bottom = 114.0
 
 [node name="Label" type="Label" parent="VBoxContainer/VBoxContainer"]
 margin_right = 134.0
@@ -97,14 +121,14 @@ expand = true
 stretch_mode = 6
 
 [node name="ScrollContainer" type="ScrollContainer" parent="VBoxContainer"]
-margin_top = 99.0
+margin_top = 130.0
 margin_right = 134.0
 margin_bottom = 219.0
 size_flags_vertical = 3
 theme = ExtResource( 8 )
 
 [node name="CenterContainer" type="CenterContainer" parent="VBoxContainer/ScrollContainer"]
-margin_right = 112.0
+margin_right = 134.0
 margin_bottom = 144.0
 mouse_filter = 1
 size_flags_horizontal = 7
