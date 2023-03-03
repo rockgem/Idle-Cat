@@ -39,3 +39,8 @@ func _on_BuyConfirm_pressed():
 
 func _on_CloseShop_pressed():
 	hide()
+
+
+func _on_Gold_gui_input(event):
+	if event is InputEventScreenTouch and !event.pressed:
+		get_node('%CoinsBuyPopup').popup()

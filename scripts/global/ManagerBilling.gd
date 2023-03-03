@@ -12,10 +12,21 @@ func _ready():
 		payment.connect('purchase_error', self, 'on_purchase_error')
 		payment.connect('purchase_consumed', self,'on_purchase_consumed')
 		payment.connect('purchase_consumption_error', self, 'on_purchase_consumption_error')
+		payment.connect("sku_details_query_completed", self, "on_sku_details_query_completed") # SKUs (Dictionary[])
+		payment.connect("sku_details_query_error", self, "on_sku_details_query_error") # Response ID (int), Debug message (string), Queried SKUs (string[])
 		
 		payment.startConnection()
 	else:
 		print("Android IAP support is not enabled. Make sure you have enabled 'Custom Build' and the GodotGooglePlayBilling plugin in your Android export settings! IAP will not work.")
+
+
+func on_connected():
+	payment.querySkuDetails(["my_iap_item"], "inapp")
+
+
+func on_sku_details_query_completed(sku_details):
+	for available_sku in sku_details:
+		print(available_sku)
 
 
 func process_purchase(purchase):
