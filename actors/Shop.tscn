@@ -273,4 +273,5 @@ text = "Close"
 [connection signal="gui_input" from="CanvasLayer/ConfirmControl" to="." method="_on_ConfirmControl_gui_input"]
 [connection signal="pressed" from="CanvasLayer/ConfirmControl/ConfirmPanel/VBoxContainer/BuyConfirm" to="." method="_on_BuyConfirm_pressed"]
 [connection signal="gui_input" from="VBoxContainer/Gold" to="." method="_on_Gold_gui_input"]
+[connection signal="gui_input" from="VBoxContainer/VBoxContainer/Gift" to="." method="_on_Gift_gui_input"]
 [connection signal="pressed" from="VBoxContainer/CloseShop" to="." method="_on_CloseShop_pressed"]

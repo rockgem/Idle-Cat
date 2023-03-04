@@ -13,5 +13,6 @@ func _ready():
 
 
 func _on_ShopDisplay_gui_input(event):
-	if event is InputEventScreenTouch and !event.pressed:
-		emit_signal("clicked", item_id)
+	return
+#	if event is InputEventScreenTouch and !event.pressed:
+#		emit_signal("clicked", item_id)

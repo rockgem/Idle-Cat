@@ -24,7 +24,6 @@ func _ready():
 
 
 func _unhandled_input(event):
-	print('gfsd')
 	if event is InputEventScreenTouch and !event.pressed and ManagerGame.is_placing == false and is_selected == false:
 		if get_rect().has_point(to_local(event.position)):
 			activate_placement(true)

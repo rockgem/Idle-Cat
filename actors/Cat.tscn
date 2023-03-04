@@ -7,9 +7,11 @@
 [node name="Cat" type="Sprite"]
 texture = ExtResource( 1 )
 centered = false
+flip_h = true
 script = ExtResource( 2 )
 
 [node name="Book" type="Sprite" parent="."]
 visible = false
-position = Vector2( 0, 34 )
+position = Vector2( 34, 34 )
 texture = ExtResource( 3 )
+flip_h = true
