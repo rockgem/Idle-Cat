@@ -20,6 +20,13 @@ __meta__ = {
 "_edit_lock_": true
 }
 
+[node name="Wall" type="TileMap" parent="."]
+mode = 1
+tile_set = ExtResource( 2 )
+cell_size = Vector2( 32, 16 )
+cell_y_sort = true
+format = 1
+
 [node name="Floor" type="TileMap" parent="."]
 mode = 1
 tile_set = ExtResource( 2 )
@@ -32,13 +39,6 @@ tile_data = PoolIntArray( 589839, 2, 0, 589840, 2, 0, 589841, 2, 0, 589842, 2, 0
 
 [node name="Cat" parent="YSort" instance=ExtResource( 3 )]
 position = Vector2( 80, 208 )
-
-[node name="Wall" type="TileMap" parent="YSort"]
-mode = 1
-tile_set = ExtResource( 2 )
-cell_size = Vector2( 19, 16 )
-cell_y_sort = true
-format = 1
 
 [node name="ItemSpawn" type="Position2D" parent="."]
 position = Vector2( 80, 216 )
