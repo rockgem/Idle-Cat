@@ -30,18 +30,15 @@ tile_data = PoolIntArray( 589839, 2, 0, 589840, 2, 0, 589841, 2, 0, 589842, 2, 0
 
 [node name="YSort" type="YSort" parent="."]
 
-[node name="Wall" type="TileMap" parent="YSort"]
-visible = false
-mode = 1
-tile_set = ExtResource( 2 )
-cell_size = Vector2( 32, 16 )
-cell_tile_origin = 2
-cell_y_sort = true
-format = 1
-tile_data = PoolIntArray( 393229, 5, 0, 393230, 5, 0, 393231, 5, 0, 393232, 5, 0, 393233, 5, 0, 458766, 5, 0, 458767, 5, 0, 458768, 5, 0, 458769, 5, 0, 458770, 5, 0, 524303, 5, 0, 524304, 5, 0, 524305, 5, 0, 524306, 5, 0, 524307, 5, 0 )
-
 [node name="Cat" parent="YSort" instance=ExtResource( 3 )]
 position = Vector2( 80, 208 )
+
+[node name="Wall" type="TileMap" parent="YSort"]
+mode = 1
+tile_set = ExtResource( 2 )
+cell_size = Vector2( 19, 16 )
+cell_y_sort = true
+format = 1
 
 [node name="ItemSpawn" type="Position2D" parent="."]
 position = Vector2( 80, 216 )

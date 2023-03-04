@@ -48,6 +48,7 @@ func _on_BuyConfirm_pressed():
 	hide()
 	get_node('%ConfirmControl').hide()
 
+
 #func _on_BuyConfirm_pressed():
 #	ManagerGame.buy_item(item_id_ref)
 #	hide()
