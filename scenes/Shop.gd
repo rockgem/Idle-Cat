@@ -12,6 +12,8 @@ func _ready():
 	get_node('%Gold').text = str(ManagerGame.player_data['money'])
 
 
+# this function is called when selecting an individual item on the shop list
+# see ShopDisplay.tscn
 func on_shop_list_clicked(item_id: String):
 	item_id_ref = item_id
 	

@@ -1,7 +1,8 @@
-[gd_resource type="Theme" load_steps=6 format=2]
+[gd_resource type="Theme" load_steps=7 format=2]
 
 [ext_resource path="res://resources/styles/button_green_normal.tres" type="StyleBox" id=1]
 [ext_resource path="res://resources/styles/font12.tres" type="DynamicFont" id=2]
+[ext_resource path="res://resources/styles/panel_big_gray_1.tres" type="StyleBox" id=3]
 
 [sub_resource type="StyleBoxFlat" id=1]
 
@@ -23,6 +24,7 @@ Button/styles/normal = ExtResource( 1 )
 Button/styles/pressed = ExtResource( 1 )
 Label/fonts/font = ExtResource( 2 )
 MenuButton/styles/normal = SubResource( 1 )
+PopupDialog/styles/panel = ExtResource( 3 )
 PopupMenu/colors/font_color = Color( 0.819608, 0.819608, 0.819608, 1 )
 PopupMenu/colors/font_color_hover = Color( 1, 1, 1, 1 )
 PopupMenu/styles/hover = null
