@@ -1,6 +1,7 @@
 extends Node
 
 
+signal item_buy_error(message)
 signal item_bought(item_id)
 signal item_clicked(own)
 signal item_storage_clicked(item_id)
@@ -85,7 +86,10 @@ func buy_item(item_id: String):
 	if all_items.has(item_id) == false:
 		return
 	
-	var price = all_items.get(item_id)['price']
+	# the price will not be depending on an individual item anymore
+	# legacy code xD
+#	var price = all_items.get(item_id)['price']
+	var price = 100
 	ManagerGame.player_data['money'] -= price
 	
 	emit_signal("item_bought", item_id)

@@ -32,13 +32,14 @@ func on_gold_changed():
 	get_node('%Gold').text = str(ManagerGame.player_data['money'])
 
 
-
 func _on_ConfirmControl_gui_input(event):
 	if event is InputEventScreenTouch and !event.pressed:
 		get_node('%ConfirmControl').hide()
 
 
 func _on_BuyConfirm_pressed():
+	if ManagerGame.player_data['money'] < 100:
+		return
 	
 	# copies the array of item ids
 	# then shuffles the indexes (act as a randomizer)
@@ -67,6 +68,6 @@ func _on_Gold_gui_input(event):
 
 func _on_Gift_gui_input(event):
 	if event is InputEventScreenTouch and !event.pressed:
-		var price = 10
+		var price = 100
 		get_node('%ConfirmControl').get_node("ConfirmPanel/VBoxContainer/BuyConfirm").text = 'Buy %s' % str(price)
 		get_node('%ConfirmControl').show()
