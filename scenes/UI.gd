@@ -18,7 +18,9 @@ func _physics_process(delta):
 		ManagerGame['player_data']['is_studying'] = false
 		ManagerGame.player_data['study_time_left'] = 0.0
 		
-		ManagerGame.player_data['money'] += 10
+		var reward = ManagerGame.player_data['study_minute_chose']
+		
+		ManagerGame.player_data['money'] += reward
 		ManagerGame.emit_signal("gold_changed")
 		
 		ManagerGame.emit_signal("studying_activated", false)
@@ -112,6 +114,10 @@ func _on_Study_pressed():
 	
 	ManagerGame.player_data['is_studying'] = true
 	ManagerGame.player_data['study_time_left'] = float(time * 60)
+	# study_minute_chose will be used as a reward amount after studying
+	# the amount of minutes will be the gain
+	ManagerGame.player_data['study_minute_chose'] = int(time)
+	
 	
 	ManagerGame.emit_signal("studying_activated", true)
 	
