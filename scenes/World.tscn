@@ -38,7 +38,8 @@ tile_data = PoolIntArray( 589839, 2, 0, 589840, 2, 0, 589841, 2, 0, 589842, 2, 0
 [node name="YSort" type="YSort" parent="."]
 
 [node name="Cat" parent="YSort" instance=ExtResource( 3 )]
-position = Vector2( 80, 208 )
+position = Vector2( 83, 212 )
+scale = Vector2( 0.8125, 0.8125 )
 
 [node name="ItemSpawn" type="Position2D" parent="."]
 position = Vector2( 80, 216 )
