@@ -8,8 +8,10 @@ func _ready():
 	
 	if ManagerGame['player_data']['is_studying']:
 		set_physics_process(true)
+		$Layer1.hide()
 	else:
 		set_physics_process(false)
+		$Layer1.show()
 
 
 # this is only used to calculate time when studying at the moment
@@ -27,6 +29,7 @@ func _physics_process(delta):
 		$StudyingBox/Study.text = 'Study'
 		
 		set_physics_process(false)
+		$Layer1.show()
 		return
 	
 	ManagerGame.player_data['study_time_left'] -= delta
@@ -105,6 +108,7 @@ func _on_Study_pressed():
 		$StudyingBox/Study.text = 'Study'
 		ManagerGame.player_data['is_studying'] = false
 		ManagerGame.emit_signal("studying_activated", false)
+		$Layer1.show()
 		return
 	
 	if $StudyingBox/StudyTimeSelect.selected == 0:
@@ -121,6 +125,7 @@ func _on_Study_pressed():
 	
 	ManagerGame.emit_signal("studying_activated", true)
 	
+	$Layer1.hide()
 	set_physics_process(true)
 
 
