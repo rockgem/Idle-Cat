@@ -34,6 +34,7 @@ var world_obj_base = {
 var player_data: Dictionary = {
 	'is_studying': false,
 	'study_time_left': 0.0,
+	'study_minute_chose': -1,
 	'money': 50,
 	'inv_items': {}, # anything that is in storage
 	'world_objs': [] # array of world_obj_base dictionaries, anything that is already placed
@@ -58,7 +59,8 @@ func _ready():
 func load_game():
 	var f = File.new()
 	f.open(SAVE_PATH, f.READ)
-	player_data = parse_json(f.get_as_text())
+	var pd = parse_json(f.get_as_text())
+	player_data.merge(pd, true)
 	f.close()
 
 
