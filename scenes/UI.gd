@@ -5,6 +5,7 @@ var ref = null
 func _ready():
 	ManagerGame.connect("item_clicked", self, 'on_item_clicked')
 	ManagerGame.connect("item_storage_clicked", self, 'on_item_storage_clicked')
+	ManagerGame.connect("gold_changed", self, 'on_gold_changed')
 	
 	if ManagerGame['player_data']['is_studying']:
 		set_physics_process(true)
@@ -19,6 +20,10 @@ func _physics_process(delta):
 		ManagerGame.player_data['study_time_left'] = 0.0
 		
 		ManagerGame.player_data['money'] += 10
+		ManagerGame.emit_signal("gold_changed")
+		
+		ManagerGame.emit_signal("studying_activated", false)
+		$StudyingBox/Study.text = 'Study'
 		
 		set_physics_process(false)
 	

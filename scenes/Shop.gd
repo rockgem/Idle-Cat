@@ -5,7 +5,8 @@ var items_available_ids = []
 
 
 func _ready():
-	ManagerGame.connect("item_bought", self, 'on_item_bought')
+	ManagerGame.connect("item_bought", self, 'on_gold_changed')
+	ManagerGame.connect("gold_changed", self, 'on_gold_changed')
 	
 #	for child in get_node('%ShopList').get_children():
 #		child.connect('clicked', self, 'on_shop_list_clicked')
@@ -27,9 +28,9 @@ func _ready():
 #
 #	get_node('%ConfirmControl').show()
 
-
-func on_item_bought(item_id):
+func on_gold_changed():
 	get_node('%Gold').text = str(ManagerGame.player_data['money'])
+
 
 
 func _on_ConfirmControl_gui_input(event):

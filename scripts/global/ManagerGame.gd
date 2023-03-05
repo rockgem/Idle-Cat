@@ -4,6 +4,7 @@ extends Node
 signal item_bought(item_id)
 signal item_clicked(own)
 signal item_storage_clicked(item_id)
+signal gold_changed
 
 signal studying_activated(boolean)
 
