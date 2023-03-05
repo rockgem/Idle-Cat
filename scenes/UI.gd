@@ -76,7 +76,10 @@ func _on_Left_pressed():
 
 
 func _on_Buy_pressed():
-	get_node('%Shop').show()
+	if get_node('%Shop').visible == false:
+		get_node('%Shop').show()
+	else:
+		get_node('%Shop').hide()
 
 
 func _on_Storage_pressed():

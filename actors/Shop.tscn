@@ -54,13 +54,13 @@ margin_bottom = -4.0
 
 [node name="Label" type="Label" parent="CanvasLayer/ConfirmControl/ConfirmPanel/VBoxContainer"]
 margin_right = 130.0
-margin_bottom = 15.0
+margin_bottom = 14.0
 text = "Purchase this?"
 
 [node name="BuyConfirm" type="Button" parent="CanvasLayer/ConfirmControl/ConfirmPanel/VBoxContainer"]
-margin_top = 19.0
+margin_top = 18.0
 margin_right = 130.0
-margin_bottom = 34.0
+margin_bottom = 32.0
 custom_colors/font_color = Color( 0.388235, 0.396078, 0.270588, 1 )
 custom_fonts/font = ExtResource( 1 )
 custom_styles/hover = ExtResource( 4 )
@@ -69,6 +69,8 @@ custom_styles/focus = ExtResource( 4 )
 custom_styles/disabled = ExtResource( 4 )
 custom_styles/normal = ExtResource( 4 )
 text = "Buy 100G"
+icon = ExtResource( 3 )
+expand_icon = true
 
 [node name="CoinsBuyPopup" type="PopupDialog" parent="CanvasLayer"]
 unique_name_in_owner = true
@@ -93,78 +95,78 @@ columns = 2
 
 [node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/CoinsBuyPopup/GridContainer"]
 margin_right = 60.0
-margin_bottom = 34.0
+margin_bottom = 32.0
 size_flags_horizontal = 3
 
 [node name="Label" type="Label" parent="CanvasLayer/CoinsBuyPopup/GridContainer/VBoxContainer"]
 margin_right = 60.0
-margin_bottom = 15.0
+margin_bottom = 14.0
 size_flags_horizontal = 3
 text = "100 Coins"
 align = 1
 
 [node name="Button" type="Button" parent="CanvasLayer/CoinsBuyPopup/GridContainer/VBoxContainer"]
-margin_top = 19.0
+margin_top = 18.0
 margin_right = 60.0
-margin_bottom = 34.0
+margin_bottom = 32.0
 text = "$0.99"
 
 [node name="VBoxContainer2" type="VBoxContainer" parent="CanvasLayer/CoinsBuyPopup/GridContainer"]
 margin_left = 77.0
 margin_right = 137.0
-margin_bottom = 34.0
+margin_bottom = 32.0
 size_flags_horizontal = 3
 
 [node name="Label" type="Label" parent="CanvasLayer/CoinsBuyPopup/GridContainer/VBoxContainer2"]
 margin_right = 60.0
-margin_bottom = 15.0
+margin_bottom = 14.0
 size_flags_horizontal = 3
 text = "100 Coins"
 align = 1
 
 [node name="Button" type="Button" parent="CanvasLayer/CoinsBuyPopup/GridContainer/VBoxContainer2"]
-margin_top = 19.0
+margin_top = 18.0
 margin_right = 60.0
-margin_bottom = 34.0
+margin_bottom = 32.0
 text = "$0.99"
 
 [node name="VBoxContainer3" type="VBoxContainer" parent="CanvasLayer/CoinsBuyPopup/GridContainer"]
-margin_top = 38.0
+margin_top = 36.0
 margin_right = 60.0
-margin_bottom = 72.0
+margin_bottom = 68.0
 size_flags_horizontal = 3
 
 [node name="Label" type="Label" parent="CanvasLayer/CoinsBuyPopup/GridContainer/VBoxContainer3"]
 margin_right = 60.0
-margin_bottom = 15.0
+margin_bottom = 14.0
 size_flags_horizontal = 3
 text = "100 Coins"
 align = 1
 
 [node name="Button" type="Button" parent="CanvasLayer/CoinsBuyPopup/GridContainer/VBoxContainer3"]
-margin_top = 19.0
+margin_top = 18.0
 margin_right = 60.0
-margin_bottom = 34.0
+margin_bottom = 32.0
 text = "$0.99"
 
 [node name="VBoxContainer4" type="VBoxContainer" parent="CanvasLayer/CoinsBuyPopup/GridContainer"]
 margin_left = 77.0
-margin_top = 38.0
+margin_top = 36.0
 margin_right = 137.0
-margin_bottom = 72.0
+margin_bottom = 68.0
 size_flags_horizontal = 3
 
 [node name="Label" type="Label" parent="CanvasLayer/CoinsBuyPopup/GridContainer/VBoxContainer4"]
 margin_right = 60.0
-margin_bottom = 15.0
+margin_bottom = 14.0
 size_flags_horizontal = 3
 text = "100 Coins"
 align = 1
 
 [node name="Button" type="Button" parent="CanvasLayer/CoinsBuyPopup/GridContainer/VBoxContainer4"]
-margin_top = 19.0
+margin_top = 18.0
 margin_right = 60.0
-margin_bottom = 34.0
+margin_bottom = 32.0
 text = "$0.99"
 
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
@@ -176,16 +178,20 @@ margin_right = -11.0
 margin_bottom = -5.0
 custom_constants/separation = 16
 
-[node name="Gold" type="Label" parent="VBoxContainer"]
-unique_name_in_owner = true
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer"]
 margin_right = 134.0
-margin_bottom = 15.0
+margin_bottom = 14.0
+
+[node name="Gold" type="Label" parent="VBoxContainer/HBoxContainer"]
+unique_name_in_owner = true
+margin_right = 32.0
+margin_bottom = 14.0
 mouse_filter = 0
 custom_colors/font_color = Color( 0.282353, 0.278431, 0.25098, 1 )
 custom_styles/normal = SubResource( 1 )
 text = "500"
 
-[node name="TextureRect" type="TextureRect" parent="VBoxContainer/Gold"]
+[node name="TextureRect" type="TextureRect" parent="VBoxContainer/HBoxContainer/Gold"]
 anchor_top = 0.5
 anchor_bottom = 0.5
 margin_left = -3.0
@@ -196,14 +202,21 @@ texture = ExtResource( 3 )
 expand = true
 stretch_mode = 6
 
-[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer"]
-margin_top = 31.0
+[node name="BuyCoins" type="Button" parent="VBoxContainer/HBoxContainer"]
+margin_left = 90.0
 margin_right = 134.0
-margin_bottom = 114.0
+margin_bottom = 14.0
+size_flags_horizontal = 10
+text = "Buy Coins"
+
+[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer"]
+margin_top = 30.0
+margin_right = 134.0
+margin_bottom = 112.0
 
 [node name="Label" type="Label" parent="VBoxContainer/VBoxContainer"]
 margin_right = 134.0
-margin_bottom = 15.0
+margin_bottom = 14.0
 custom_colors/font_color = Color( 0.337255, 0.337255, 0.337255, 1 )
 custom_fonts/font = ExtResource( 1 )
 text = "Purchase furniture"
@@ -211,9 +224,9 @@ align = 1
 
 [node name="Gift" type="TextureRect" parent="VBoxContainer/VBoxContainer"]
 margin_left = 35.0
-margin_top = 19.0
+margin_top = 18.0
 margin_right = 99.0
-margin_bottom = 83.0
+margin_bottom = 82.0
 rect_min_size = Vector2( 64, 64 )
 size_flags_horizontal = 4
 texture = ExtResource( 9 )
@@ -221,9 +234,9 @@ expand = true
 stretch_mode = 6
 
 [node name="ScrollContainer" type="ScrollContainer" parent="VBoxContainer"]
-margin_top = 130.0
+margin_top = 128.0
 margin_right = 134.0
-margin_bottom = 219.0
+margin_bottom = 220.0
 size_flags_vertical = 3
 theme = ExtResource( 8 )
 
@@ -265,13 +278,14 @@ margin_bottom = 144.0
 item_id = "nightstand_1"
 
 [node name="CloseShop" type="Button" parent="VBoxContainer"]
-margin_top = 235.0
+margin_top = 236.0
 margin_right = 134.0
 margin_bottom = 250.0
 text = "Close"
 
 [connection signal="gui_input" from="CanvasLayer/ConfirmControl" to="." method="_on_ConfirmControl_gui_input"]
 [connection signal="pressed" from="CanvasLayer/ConfirmControl/ConfirmPanel/VBoxContainer/BuyConfirm" to="." method="_on_BuyConfirm_pressed"]
-[connection signal="gui_input" from="VBoxContainer/Gold" to="." method="_on_Gold_gui_input"]
+[connection signal="gui_input" from="VBoxContainer/HBoxContainer/Gold" to="." method="_on_Gold_gui_input"]
+[connection signal="pressed" from="VBoxContainer/HBoxContainer/BuyCoins" to="." method="_on_BuyCoins_pressed"]
 [connection signal="gui_input" from="VBoxContainer/VBoxContainer/Gift" to="." method="_on_Gift_gui_input"]
 [connection signal="pressed" from="VBoxContainer/CloseShop" to="." method="_on_CloseShop_pressed"]

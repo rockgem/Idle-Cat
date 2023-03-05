@@ -71,3 +71,7 @@ func _on_Gift_gui_input(event):
 		var price = 100
 		get_node('%ConfirmControl').get_node("ConfirmPanel/VBoxContainer/BuyConfirm").text = 'Buy %s' % str(price)
 		get_node('%ConfirmControl').show()
+
+
+func _on_BuyCoins_pressed():
+	get_node('%CoinsBuyPopup').popup()
