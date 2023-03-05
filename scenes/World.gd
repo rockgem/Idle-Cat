@@ -8,7 +8,7 @@ func _ready():
 	ManagerGame.connect("item_bought", self, 'on_item_bought')
 	ManagerGame.connect("item_storage_clicked", self, 'on_item_bought')
 	
-	ManagerGame.floor_tiles_ref = $Floor
+	ManagerGame.floor_tiles_ref = $YSort/Floor
 	
 	load_furnitures()
 
@@ -18,7 +18,7 @@ func on_item_bought(item_id: String):
 	var obj = load("res://actors/Object.tscn").instance()
 	obj.texture = load("res://assets/furniture_wall_floor_cat/objs/%s.png" % item_id)
 	obj.item_id = item_id
-	$YSort.add_child(obj)
+	$YSort2.add_child(obj)
 	
 	obj.global_position = $ItemSpawn.global_position
 
@@ -30,7 +30,7 @@ func load_furnitures():
 		o.item_id = obj['item_id']
 		o.obj_data = obj
 		o.is_from_load = true
-		$YSort.add_child(o)
+		$YSort2.add_child(o)
 		
 		o.flip_h = obj['rotated']
 		o.global_position = Vector2(obj['global_position_x'], obj['global_position_y'])
